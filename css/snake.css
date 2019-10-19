@@ -1,0 +1,244 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background: #000;
+    padding: 30px 30px 0px;
+    position: relative;
+}
+h2{
+    text-align: center; 
+}
+h2 span{
+    margin: 0 5px;
+    font-size: 35px;
+}
+h2 span:nth-child(1){
+    color: rgb(235, 43, 43);
+    text-shadow: 5px 2px 10px rgb(235, 43, 43);
+}
+h2 span:nth-child(2){
+    color: rgb(229, 255, 0);
+    text-shadow: 5px 2px 10px rgb(229, 255, 0);
+}
+h2 span:nth-child(3){
+    color: rgb(72, 252, 1);
+    text-shadow: 5px 2px 10px rgb(72, 252, 1);
+}
+h2 span:nth-child(4){
+    color: rgb(12, 168, 240);
+    text-shadow: 5px 2px 10px rgb(12, 168, 240);
+}
+h2 span:nth-child(5){
+    color: rgb(165, 33, 226);
+    text-shadow: 5px 2px 10px rgb(165, 33, 226);
+}
+h2 span:nth-child(6){
+    color: rgb(59, 107, 157);
+    text-shadow: 5px 2px 10px rgb(59, 107, 157);
+}
+/*游戏区域*/
+.content{
+    width: 660px;
+    height: 520px;
+    margin: 30px auto 0;
+    position: relative;
+}
+.btn{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 2;
+}
+.btn button{
+    background: none;
+    border: none; 
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.startBtn button{
+    width: 200px;
+    height: 80px;
+    background-image: url(../img/startGame.png);
+    margin-left: -100px;
+    margin-top: -40px;
+}
+.pauseBtn{
+    display: none;
+}
+.pauseBtn button{
+    width: 70px;
+    height: 70px;
+    background-image: url(../img/start.png);
+    margin-left: -35px;
+    margin-top: -35px;
+}
+/*snakeWrap*/
+#snakeWrap{
+    width: 640px;
+    height: 500px;
+    border: 10px solid #b9ee9b;
+    position: relative;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+}
+.snakeHead{
+    background-image: url(../img/head.png);
+    background-size: cover;
+}
+.snakeBody{
+    background-image: url(../img/body.png);
+    background-size: cover;
+    transition: all 0.5s ease;
+}
+.food{
+    background-image: url(../img/apple.png);
+    background-size: cover;
+}
+/*游戏难度*/
+.btn1{
+    display: none;
+}
+.btn1 button{
+    width: 100px;
+    height: 40px;
+    color: #fff;
+    border-radius: 20px;
+    margin-left: -50px;
+    margin-top: -20px;
+    background-image: linear-gradient(to right,rgb(230, 131, 255),rgb(73,184,255));
+    letter-spacing: 2px;
+    font-size: 20px;
+}
+.btn1 .easy{
+    margin-left: -180px;
+}
+.btn1 .difficult{
+    margin-left: 80px;
+}
+/*移动端按键*/
+.mBtn{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgb(51, 51, 51);
+    color: #fff;
+    box-shadow: 0 0 10px 2px rgb(231, 231, 231);
+    font-size: 45px;
+    text-align: center;
+    line-height: 70px;
+    bottom: 80px;
+    left: 50%;
+    display: none;
+}
+.mBtn:active{
+    transform: scale(0.95);
+}
+/*计分器*/
+.score{
+    width: 200px;
+    height: 120px;
+    background-image: url(../img/startP.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 10px;
+    right: -200px;
+    text-align: center;
+    line-height: 115px;
+    color: red;
+    font-size: 20px;
+    font-weight: 600;
+}
+@media screen and (max-width: 768px){
+    body{
+        height: 100vh;
+        padding: 30px 0px;
+    }
+    .mBtn{
+        display: block;
+    }
+    .mBtn.up{
+        bottom: 180px;
+        margin-left: -40px;
+    }
+    .mBtn.down{
+        bottom: 80px;
+        margin-left: -40px;
+    }
+    .mBtn.left{ 
+        margin-left: -140px;
+    }
+    .mBtn.right{
+        bottom: 80px;
+        margin-left: 60px;
+    }
+    .score{
+        width: 150px;
+        height: 90px;
+        left: 50%;
+        top: 540px;
+        line-height: 90px;
+        font-size: 18px;
+        margin-left: -75px;
+    }
+}
+@media screen and (max-width: 568px){
+    body{
+        padding: 30px 0px;
+    }
+    .content{
+        width: 360px;
+        height: 270px;
+    }
+    #snakeWrap{
+        width: 360px;
+        height: 270px;
+        border: none;
+    }
+    .mBtn.up{
+        bottom: 180px;
+        margin-left: -40px;
+    }
+    .mBtn.down{
+        bottom: 80px;
+        margin-left: -40px;
+    }
+    .mBtn.left{ 
+        margin-left: -140px;
+    }
+    .mBtn.right{
+        bottom: 80px;
+        margin-left: 60px;
+    }
+    .btn1 button{
+        width: 80px;
+        font-size: 18px;
+        margin-left: -40px;
+    }
+    .btn1 .easy{
+        margin-left: -140px;
+    }
+    .btn1 .difficult{
+        margin-left: 60px;
+    }
+    .score{
+        width: 150px;
+        height: 90px;
+        left: 50%;
+        top: 280px;
+        line-height: 90px;
+        font-size: 18px;
+        margin-left: -75px;
+    }
+}
